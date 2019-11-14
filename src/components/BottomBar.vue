@@ -4,26 +4,20 @@
     color="primary"
     fixed
     grow
-    shift
     v-model="bottomNav"
   >
     <v-btn @click="goToHome">
-      <span>首页</span>
+<!--      <span>首页</span>-->
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn @click="goToWealth">
-      <span>财富</span>
-      <v-icon>mdi-currency-cny</v-icon>
-    </v-btn>
-
     <v-btn @click="goToShopping">
-      <span>生活</span>
-      <v-icon>mdi-shopping</v-icon>
+<!--      <span>生活</span>-->
+      <v-icon large>mdi-camera</v-icon>
     </v-btn>
 
     <v-btn @click="goToUser">
-      <span>我的</span>
+<!--      <span>我的</span>-->
       <v-icon>mdi-account</v-icon>
     </v-btn>
 
