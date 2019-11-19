@@ -1,14 +1,6 @@
 <template>
-  <v-card
-    class="mx-auto"
-    max-width="434"
-    tile
-    flat
-  >
-    <v-toolbar
-      dark
-      color="primary"
-    >
+  <v-card class="mx-auto" max-width="434" tile flat>
+    <v-toolbar dark color="primary">
       <v-btn icon @click="goToHome">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
@@ -17,33 +9,15 @@
       <v-spacer></v-spacer>
     </v-toolbar>
 
-    <v-img
-      height="100%"
-      src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg"
-    >
-      <v-row
-        align="end"
-        class="fill-height"
-      >
-        <v-col
-          align-self="start"
-          class="pa-0"
-          cols="12"
-        >
-          <v-avatar
-            class="profile"
-            color="grey"
-            size="164"
-            tile
-          >
+    <v-img height="100%" src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg">
+      <v-row align="end" class="fill-height">
+        <v-col align-self="start" class="pa-0" cols="12">
+          <v-avatar class="profile" color="grey" size="164" tile>
             <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
           </v-avatar>
         </v-col>
         <v-col class="py-0">
-          <v-list-item
-            color="rgba(0, 0, 0, .4)"
-            dark
-          >
+          <v-list-item color="rgba(0, 0, 0, .4)" dark>
             <v-list-item-content>
               <v-list-item-title class="title">Marcus Obrien</v-list-item-title>
               <v-list-item-subtitle>Network Engineer</v-list-item-subtitle>
@@ -86,6 +60,19 @@
 
       <v-list-item>
         <v-list-item-icon>
+          <v-icon color="indigo">mdi-credit-card</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content @click="goToCreditCard">
+          <v-list-item-title>未绑定</v-list-item-title>
+          <v-list-item-subtitle>点击绑定您的卡号</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider inset></v-divider>
+
+      <v-list-item>
+        <v-list-item-icon>
           <v-icon color="indigo">mdi-email</v-icon>
         </v-list-item-icon>
 
@@ -117,7 +104,6 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-
   </v-card>
 </template>
 
@@ -130,11 +116,14 @@ export default {
   methods: {
     goToHome () {
       this.$router.push('/')
+    },
+
+    goToCreditCard () {
+      this.$router.push('../creditcard')
     }
   }
 }
 </script>
 
 <style scoped>
-
 </style>

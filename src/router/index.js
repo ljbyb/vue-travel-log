@@ -26,7 +26,14 @@ const routes = [
   {
     path: '/user',
     name: 'user',
-    component: () => import('../views/User.vue')
+    component: () => import('../views/User.vue'),
+    children: [
+      {
+        path: 'creditcard',
+        name: 'creditcard',
+        component: () => import('../views/CreditCard.vue')
+      }
+    ]
   }
 ]
 

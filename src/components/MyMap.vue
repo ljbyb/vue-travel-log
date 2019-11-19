@@ -1,7 +1,7 @@
 <template>
   <!-- 地图展示 -->
   <div style="height:100%;width:100%;text-align:left;">
-    <div ref="basicMapbox" style="height:100%;width:100%;"></div>
+    <div ref="basicMapbox" style="height:500px;width:100%;"></div>
     <pre id="info"></pre>
     <pre id="coordinates" class="coordinates"></pre>
   </div>
