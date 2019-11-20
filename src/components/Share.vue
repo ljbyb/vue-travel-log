@@ -5,7 +5,7 @@
       <v-subheader>分享到...</v-subheader>
       <v-list-item v-for="item in shareItems" :key="item.title" @click="visibility = false">
         <v-list-item-avatar>
-          <v-avatar size="32px" tile>
+          <v-avatar size="24px" tile>
             <img :src="item.img" :alt="item.title" />
           </v-avatar>
         </v-list-item-avatar>
