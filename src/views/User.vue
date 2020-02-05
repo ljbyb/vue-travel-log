@@ -1,6 +1,6 @@
 <template>
-  <v-card class="mx-auto" max-width="434" tile flat>
-    <v-toolbar dark color="primary">
+  <v-card class="mx-auto" max-width="500">
+    <!-- <v-toolbar dark color="primary">
       <v-btn icon @click="goToHome">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
@@ -25,6 +25,26 @@
           </v-list-item>
         </v-col>
       </v-row>
+    </v-img>-->
+
+    <v-toolbar absolute dark flat fixed color="transparent">
+      <v-btn icon @click="goToHome">
+        <v-icon>mdi-arrow-left</v-icon>
+      </v-btn>
+      <!-- <v-spacer></v-spacer> -->
+      <!-- <v-toolbar-title>个人信息</v-toolbar-title> -->
+      <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
+    </v-toolbar>
+    <v-img
+      src="https://cdn.vuetifyjs.com/images/lists/ali.png"
+      height="300px"
+      dark
+      class="display-1 white--text align-end"
+    >
+      <div>Ali Conners</div>
     </v-img>
 
     <v-list two-line>

@@ -26,12 +26,14 @@
       </v-btn>
 
       <v-btn icon @click="goToMessageBox">
-        <v-badge v-model="showmessage" color="red">
-          <template v-slot:badge>9+</template>
+        <v-badge
+          color="red"
+          :value="this.$store.state.messages"
+          :content="this.$store.state.messages"
+        >
+          <!-- <template v-slot:badge>9+</template> -->
           <v-icon>mdi-email</v-icon>
         </v-badge>
-
-        <v-spacer></v-spacer>
       </v-btn>
 
       <template v-slot:extension>
@@ -57,36 +59,45 @@
             </v-list-item-content>
           </v-list-item>
           <!-- <v-img src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg" height="194"></v-img> -->
-          <v-row>
-            <v-col v-for="n in 6" :key="n" class="d-flex child-flex" cols="4">
-              <v-card flat>
-                <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                  aspect-ratio="1"
-                  class="grey lighten-2"
-                >
-                  <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-              </v-card>
-            </v-col>
-          </v-row>
+          <v-container fluid>
+            <v-row>
+              <v-col v-for="n in 6" :key="n" class="d-flex child-flex" cols="4">
+                <v-card flat>
+                  <v-img
+                    :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+                    :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                    aspect-ratio="1"
+                    class="grey lighten-2"
+                  >
+                    <template v-slot:placeholder>
+                      <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                      </v-row>
+                    </template>
+                  </v-img>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
           <v-card-text>Visit ten places on our planet that are undergoing the biggest changes today.</v-card-text>
           <v-card-actions>
-            <v-btn text @click="hearts = hearts + 1">
-              <v-icon color="red">mdi-heart</v-icon>
-              <span>{{hearts}}</span>
+            <v-btn text dark small color="pink" @click="hearts = hearts + 1">
+              <v-icon dark>mdi-heart</v-icon>
+              {{hearts}}
             </v-btn>
-            <v-btn text @click="showshare = !showshare">
+            <!-- <v-btn text icon color="red" @click="hearts = hearts + 1">
+              <v-icon>mdi-heart</v-icon>
+              <div>{{hearts}}</div>
+            </v-btn>-->
+            <v-btn text dark small color="green" @click="showshare = !showshare">
+              <v-icon dark>mdi-share-variant</v-icon>564
+            </v-btn>
+            <!-- <v-btn text @click="showshare = !showshare">
               <v-icon color="blue">mdi-share-variant</v-icon>
               <span>564</span>
-            </v-btn>
+            </v-btn>-->
             <v-spacer></v-spacer>
-            <v-btn text color="deep-purple accent-4" @click="showmap=!showmap">阅读更多</v-btn>
+            <v-btn text color="deep-purple accent-4" @click="showmap=!showmap">更多...</v-btn>
           </v-card-actions>
         </v-card>
 
@@ -107,11 +118,11 @@
         </v-row>-->
 
         <!-- 展示返回顶部按钮 -->
-        <div style="text-align:center">
+        <!-- <div style="text-align:center">
           <v-btn :style="totopStyle" absolute dark fixed style="bottom:10px;" fab>
             <v-icon>mdi-camera</v-icon>
           </v-btn>
-        </div>
+        </div>-->
 
         <BottomLine></BottomLine>
       </v-container>
@@ -135,7 +146,7 @@ export default {
   data () {
     return {
       hearts: 0,
-      showmessage: true,
+      messages: 99,
       showmap: false,
       showshare: false,
       show: false,
