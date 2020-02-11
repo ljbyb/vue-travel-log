@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.d79141886ae944d6913b5bd7871b894f.js"
+  "precache-manifest.f8d3954ffc156b5f783a3cd47085a71f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vue-travel-log"});
